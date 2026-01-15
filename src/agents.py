@@ -28,6 +28,12 @@ try:
 except ImportError:
     ANTHROPIC_AVAILABLE = False
 
+try:
+    from langchain_groq import ChatGroq
+    GROQ_AVAILABLE = True
+except ImportError:
+    GROQ_AVAILABLE = False
+
 
 class SQLAgentSystem:
     """
@@ -78,6 +84,20 @@ class SQLAgentSystem:
 
             return ChatAnthropic(
                 model=self.model,
+                temperature=0,
+                api_key=api_key
+            )
+
+        elif "llama" in self.model or "mixtral" in self.model or "gemma" in self.model:
+            if not GROQ_AVAILABLE:
+                raise ImportError("Groq not available. Run: pip install langchain-groq")
+
+            api_key = os.getenv("GROQ_API_KEY")
+            if not api_key:
+                raise ValueError("GROQ_API_KEY not found in environment")
+
+            return ChatGroq(
+                model_name=self.model,
                 temperature=0,
                 api_key=api_key
             )
