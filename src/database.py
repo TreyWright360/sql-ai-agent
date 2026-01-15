@@ -132,8 +132,9 @@ class DatabaseManager:
 
         conn = sqlite3.connect(self.db_path)
         cursor = conn.execute("""
-            SELECT DISTINCT session_id
+            SELECT session_id
             FROM chat_history
+            GROUP BY session_id
             ORDER BY MAX(timestamp) DESC
         """)
 
