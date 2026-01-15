@@ -14,6 +14,26 @@ class DatabaseManager:
         self.db_path = db_path
         self.validator = SQLValidator()
         self.query_log = []
+        self._init_db()
+
+    def _init_db(self):
+        """Initialize database tables if they don't exist"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS chat_history (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    session_id TEXT NOT NULL,
+                    role TEXT NOT NULL,
+                    content TEXT NOT NULL,
+                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_chat_session ON chat_history(session_id)")
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            print(f"Error initializing database: {e}")
 
     def execute_query(self, sql_query: str) -> Tuple[bool, Any, Dict]:
         """
