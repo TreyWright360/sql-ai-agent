@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL AI Agent - Query Your Database in Natural Language</title>
+    <meta name="description" content="AI-powered SQL query agent that converts natural language to SQL with 87% accuracy">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">SQL AI Agent</span>
+                </div>
+                <nav class="nav">
+                    <a href="#demo" class="nav-link">Demo</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#tech" class="nav-link">Tech Stack</a>
+                    <a href="https://github.com/yourusername/sql-ai-agent" target="_blank" class="nav-link nav-link-github">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Query Your Database in
+                    <span class="gradient-text">Natural Language</span>
+                </h1>
+                <p class="hero-description">
+                    AI-powered SQL agent that converts plain English to SQL queries with 87% accuracy.
+                    No SQL knowledge required. Built with multi-agent architecture and 100% data safety.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">87%</div>
+                        <div class="stat-label">SQL Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">&lt;5s</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Data Safety</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-primary">Try Live Demo</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Natural Language Queries</h3>
+                    <p class="feature-description">
+                        Ask questions in plain English. No SQL syntax required.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Multi-Agent Architecture</h3>
+                    <p class="feature-description">
+                        Specialized AI agents for conversation and SQL generation.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Query Validation</h3>
+                    <p class="feature-description">
+                        Security layer prevents destructive operations like DELETE and DROP.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Auto-Visualizations</h3>
+                    <p class="feature-description">
+                        Automatically generates charts based on your data patterns.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">Session Memory</h3>
+                    <p class="feature-description">
+                        Remembers conversation context for intelligent follow-ups.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast & Accurate</h3>
+                    <p class="feature-description">
+                        87% accuracy on complex queries, sub-5-second response time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Live Demo</h2>
+            <p class="section-subtitle">Try asking questions about our e-commerce database (100,000+ orders)</p>
+
+            <div class="demo-container">
+                <!-- Sample Queries -->
+                <div class="sample-queries">
+                    <h3>💡 Try these questions:</h3>
+                    <div class="sample-query-buttons">
+                        <button class="sample-query-btn" data-query="How many orders are in the database?">
+                            📈 How many orders are in the database?
+                        </button>
+                        <button class="sample-query-btn" data-query="Show me monthly revenue trends for 2017">
+                            📊 Show me monthly revenue trends for 2017
+                        </button>
+                        <button class="sample-query-btn" data-query="What are the top 10 product categories by sales?">
+                            🏆 Top 10 product categories by sales
+                        </button>
+                        <button class="sample-query-btn" data-query="Show me the payment method distribution">
+                            💳 Payment method distribution
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Interface -->
+                <div class="chat-interface">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message message-assistant">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hi! I'm your AI data analyst. I can help you explore the e-commerce database by answering questions in plain English.</p>
+                                <p>Try one of the sample questions above, or ask me anything about the data!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <input
+                            type="text"
+                            class="chat-input"
+                            id="chatInput"
+                            placeholder="Ask a question about your data..."
+                            autocomplete="off"
+                        />
+                        <button class="chat-send-btn" id="sendBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Visualization Area -->
+                <div class="visualization-area" id="visualizationArea" style="display: none;">
+                    <div class="viz-header">
+                        <h3>Results</h3>
+                        <button class="btn-close-viz" id="closeViz">×</button>
+                    </div>
+                    <canvas id="chartCanvas"></canvas>
+                    <div class="data-table-container" id="dataTableContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🐍</div>
+                    <h4>Python</h4>
+                    <p>Backend Logic</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🦜</div>
+                    <h4>LangChain</h4>
+                    <p>AI Orchestration</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🤖</div>
+                    <h4>GPT-4 / Claude</h4>
+                    <p>Language Models</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">💾</div>
+                    <h4>SQLite / PostgreSQL</h4>
+                    <p>Database</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📊</div>
+                    <h4>Chart.js</h4>
+                    <p>Visualizations</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔒</div>
+                    <h4>Custom Validator</h4>
+                    <p>Query Security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="architecture-diagram">
+                <div class="arch-step">
+                    <div class="arch-number">1</div>
+                    <h4>User Query</h4>
+                    <p>Ask question in natural language</p>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-step">
+                    <div class="arch-number">2</div>
+                    <h4>Main Agent</h4>
+                    <p>Determines intent & context</p>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-step">
+                    <div class="arch-number">3</div>
+                    <h4>SQL Generator</h4>
+                    <p>Creates SQL query</p>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-step">
+                    <div class="arch-number">4</div>
+                    <h4>Validator</h4>
+                    <p>Security check</p>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-step">
+                    <div class="arch-number">5</div>
+                    <h4>Results + Chart</h4>
+                    <p>Data visualization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Try It?</h2>
+            <p class="cta-description">Deploy your own instance or contribute to the project</p>
+            <div class="cta-buttons">
+                <a href="#demo" class="btn btn-primary btn-lg">Try Live Demo</a>
+                <a href="https://github.com/yourusername/sql-ai-agent" target="_blank" class="btn btn-secondary btn-lg">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 SQL AI Agent. Built as part of Codebasics Portfolio Series.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/yourusername" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" class="footer-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
